@@ -1,7 +1,9 @@
 name: Ubuntu-latest Build Check
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -9,8 +11,6 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-      with:
-          ref: ${{ github.head_ref }}
     - name: Set up Python 3.x
       uses: actions/setup-python@v4
       with:
