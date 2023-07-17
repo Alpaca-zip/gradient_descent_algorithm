@@ -10,7 +10,7 @@ $ git clone https://github.com/Alpaca-zip/gradient_descent_algorithm.git
 ### 2. Install dependencies and compile the program.
 ```
 $ python3 -m pip install matplotlib numpy
-$ build.sh
+$ bash build.sh
 ```
 ### 3. Run the program. 
 1. Upon running the program, you need to input the objective function as vectors for two variables (x1, x2), each defined by their degree and coefficient. You're asked to enter the order matrices for x1, x2, and the coefficient respectively.
