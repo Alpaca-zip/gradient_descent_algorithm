@@ -20,6 +20,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <chrono>
 
 #include "../matplotlib-cpp/matplotlibcpp.h"
 
