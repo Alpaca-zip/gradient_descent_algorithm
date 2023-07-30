@@ -115,8 +115,8 @@ void GradientDescentNode::solveGradientDescent()
   auto start_time = std::chrono::high_resolution_clock::now();
   const int max_iter = 10000;
   const double precision = 1e-4;
-  const double xi = 0.3;
-  const double tau = 0.9;
+  const double xi = 1e-4;
+  const double tau = 0.5;
   std::cout << "\n";
   std::cout << "Default values:" << std::endl;
   std::cout << " max_iter = " << max_iter << std::endl;
