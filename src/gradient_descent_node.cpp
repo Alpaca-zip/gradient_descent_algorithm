@@ -113,7 +113,7 @@ void GradientDescentNode::displayFunction(
 void GradientDescentNode::solveGradientDescent()
 {
   auto start_time = std::chrono::high_resolution_clock::now();
-  const int max_iter = 10000;
+  const int max_iter = 100000;
   const double precision = 1e-4;
   const double xi = 1e-4;
   const double tau = 0.5;
@@ -132,7 +132,7 @@ void GradientDescentNode::solveGradientDescent()
   x_curr = {_x_start, _y_start};
 
   for (int i = 0; i < max_iter; i++) {
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start_time).count();
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start_time).count();
     alpha = 1.0;
     grad_curr = calcGradient(x_curr[0], x_curr[1]);
     _path.push_back({x_curr[0], x_curr[1]});
@@ -142,7 +142,7 @@ void GradientDescentNode::solveGradientDescent()
     std::cout << " Objective Function Value = " << calcObjective(x_curr[0], x_curr[1]) << std::endl;
     std::cout << " Gradient = [" << grad_curr[0] << ", " << grad_curr[1] << "]" << std::endl;
     std::cout << " Gradient Norm = " << norm(grad_curr[0], grad_curr[1]) << std::endl;
-    std::cout << " Elapsed Time = " << elapsed_time << " ms" << std::endl;
+    std::cout << " Elapsed Time = " << elapsed_time << " microseconds" << std::endl;
 
     if (norm(grad_curr[0], grad_curr[1]) < precision) {
       break;
