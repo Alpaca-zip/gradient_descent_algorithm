@@ -132,13 +132,16 @@ void GradientDescentNode::solveGradientDescent()
   x_curr = {_x_start, _y_start};
 
   for (int i = 0; i < max_iter; i++) {
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start_time).count();
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::microseconds>(
+                          std::chrono::high_resolution_clock::now() - start_time)
+                          .count();
     alpha = 1.0;
     grad_curr = calcGradient(x_curr[0], x_curr[1]);
     _path.push_back({x_curr[0], x_curr[1]});
     std::cout << "====================" << std::endl;
     std::cout << "Iteration: " << i + 1 << std::endl;
-    std::cout << " Current x1 and x2 values = [" << x_curr[0] << ", " << x_curr[1] << "]" << std::endl;
+    std::cout << " Current x1 and x2 values = [" << x_curr[0] << ", " << x_curr[1] << "]"
+              << std::endl;
     std::cout << " Objective Function Value = " << calcObjective(x_curr[0], x_curr[1]) << std::endl;
     std::cout << " Gradient = [" << grad_curr[0] << ", " << grad_curr[1] << "]" << std::endl;
     std::cout << " Gradient Norm = " << norm(grad_curr[0], grad_curr[1]) << std::endl;
